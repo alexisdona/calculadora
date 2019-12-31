@@ -78,19 +78,14 @@ public class Calculadora {
 
         for (int i = 0; i < terminos.size(); i++) {
 
-                /* Get number and push. */
                 double operando = terminos.get(i).getOperando();
                 pilaDeNumeros.push(operando);
                 Operador operador = terminos.get(i).getOperador();
 
 
-                /* Get operator, collapse top as needed, push operator. */
 
                 colapsarTopePila(operador, pilaDeNumeros, pilaDeOperadores);
                 pilaDeOperadores.push(operador);
-
-
-
         }
 
     return pilaDeNumeros.peek();
