@@ -55,7 +55,7 @@ public class Calculadora {
         }
         return 0;
     }
-    public void colapsarTope(Operador operadorTope, Stack<Double> pilaDeNumeros, Stack<Operador> PilaDeOperadores) {
+    public void colapsarTopePila(Operador operadorTope, Stack<Double> pilaDeNumeros, Stack<Operador> PilaDeOperadores) {
         while (PilaDeOperadores.size() > 0 && pilaDeNumeros.size() > 1) {
 
             if (prioridadOperador(operadorTope) <= prioridadOperador(PilaDeOperadores.peek())) {
@@ -86,7 +86,7 @@ public class Calculadora {
 
                 /* Get operator, collapse top as needed, push operator. */
 
-                colapsarTope(operador, pilaDeNumeros, pilaDeOperadores);
+                colapsarTopePila(operador, pilaDeNumeros, pilaDeOperadores);
                 pilaDeOperadores.push(operador);
 
 
